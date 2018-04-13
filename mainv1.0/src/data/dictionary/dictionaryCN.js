@@ -96,15 +96,33 @@ var DictionaryCN = [
 	  '【n.】推论;结果，成果;[逻]结论;重要性'
 		]
 	},
-	//{
-	//	word: 'xxxxxxxxxxxxxxxx', property: 'n./v./adj.',
-	//	article: [
-	//	'【v.】xxxxxxxxxxxxx',
-	//  '【adj.】xxxxxxxxxxxxxxxxxx',
-	//  '【n.】xxxxxxxxxxx'
-	//	]
-	//},
-
+	{
+		word: 'extract', property: 'n./v.',
+		article: [
+		'【v.】提取;（费力地）拔出;选取;获得',
+	  '【n.】汁;摘录;提炼物;浓缩物'
+		]
+	},
+	{
+		word: 'deprecate', property: 'v.',
+		article: [
+		'【v.】不赞成，反对',
+		]
+	},
+	{
+		word: 'rejection', property: 'n.',
+		article: [
+			'【n.】拒绝;摒弃;剔除物;<医>排斥'
+		]
+	},
+	{
+		word: '此条记录为模板请忽略', property: 'n./v./adj.',
+		article: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
 ];
 
 
