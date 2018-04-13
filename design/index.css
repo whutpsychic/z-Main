@@ -1,0 +1,147 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+ul {
+	list-style: none;
+}
+
+body{
+	background:linear-gradient(#389edc, #fff);
+	background-repeat:no-repeat;
+	margin-top:52px;
+}
+/*************************顶部*************************/
+.top-bar {
+	width: 100%;
+	height: 52px;
+	min-width: 1000px;
+	background: rgba(255,255,255,0.3);
+	position: fixed;
+	top: 0;
+}
+	.top-bar * {
+		/*animation*/
+		transition: .1s;
+	}
+
+.language-selector {
+	float: left;
+	margin-left: 20px;
+	margin-top: 11px;
+}
+
+	.language-selector select {
+		color: purple;
+		width: 100px;
+		height: 30px;
+	}
+
+	.language-selector option {
+		color:purple;
+	}
+
+.top-bar .right-contents {
+	float:right;
+}
+
+	.top-bar .right-contents ul {
+	}
+
+	.top-bar .right-contents li {
+		float: left;
+		margin-top: 14px;
+		margin-right: 20px;
+		cursor:pointer;
+	}
+
+	.top-bar .right-contents li:hover {
+		color:purple;
+		font-weight:600;
+		font-size:20px;
+	}
+
+
+/***************************上方***********************/
+.top-clock {
+	width: 100%;
+	height: 300px;
+	background-color: #61b2a7;
+}
+
+
+/***********************中间***************************/
+.main-container {
+	min-height: 1000px;
+	width: 1000px;
+	margin-left: calc((100% - 1000px)/2);
+	background: #fff;
+}
+
+.main-left-menu {
+	float:left;
+	width:295px;
+	min-height:1000px;
+	border-right:solid 1px #ccc;
+}
+
+.top-icon {
+
+}
+
+.behind-bars {
+}
+
+.main-right-contents {
+	width: 695px;
+	min-height:1000px;
+	margin-left: 305px;
+}
+
+.query-bar {
+}
+
+.artical-menus {
+}
+
+	.artical-menus ul {
+	}
+
+	.artical-menus li {
+	}
+/************************底部**************************/
+.bottom-bar {
+	width: 100%;
+	height: 150px;
+	background: linear-gradient(#000, #fff);
+}
+
+	.bottom-bar span {
+		color:#fff;
+	}
+
+/************************提示框组件**************************/
+.message {
+}
+
+	.message.alert {
+	}
+
+	.message.confirm {
+	}
+
+	.message.error {
+	}
+
+/************************翻页组件**************************/
+
+.page-turning {
+}
+
+	.page-turning ul {
+	}
+
+	.page-turning li {
+	}
