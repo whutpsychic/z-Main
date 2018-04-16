@@ -1,0 +1,47 @@
+﻿*{
+	margin:0;
+	padding:0;
+	font-size:16px;
+
+}
+
+ul{
+	list-style:none;
+}
+
+/****************************************************/
+
+.top-bar {
+	display: block;
+	height: 4em;
+	border-bottom: solid 1px #ccc;
+	background-color: #aaa;
+	
+}
+
+	.top-bar ul,
+	.top-bar div 
+	{
+		float: right;
+		height: 2em;
+		margin: 1em;
+	}
+
+	.top-bar li,
+	.top-bar div 
+	{
+		display: inline-block;
+		margin-right: 1em;
+		cursor: pointer;
+		position: relative;
+	}
+
+
+
+
+
+
+
+
+
+
