@@ -3,17 +3,13 @@
 
 class Translator extends Component {
 
-
-
-
-
 	render() {
 
-		const { list } = this.props;
+		const { list, onChange } = this.props;
 
 		return (
 			<div className="language-selector">
-				<select>
+        <select onChange={onChange}>
 					{
 						list.map((item, index) => {
 							return (<option key={index}>{item.text}</option>)

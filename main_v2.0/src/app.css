@@ -9,6 +9,11 @@ ul{
 	list-style:none;
 }
 
+select,
+input{
+  box-sizing:border-box;
+}
+
 /****************************************************/
 
 .top-bar {
@@ -19,22 +24,30 @@ ul{
 	
 }
 
-	.top-bar ul,
-	.top-bar div 
-	{
-		float: right;
-		height: 2em;
-		margin: 1em;
-	}
+  .top-bar .language-selector {
+    display: inline-block;
+    height: 2em;
+    margin: 1em;
+  }
 
-	.top-bar li,
-	.top-bar div 
-	{
-		display: inline-block;
-		margin-right: 1em;
-		cursor: pointer;
-		position: relative;
-	}
+  .top-bar .language-selector select{
+    height: 2em;
+    width:6em;
+  }
+
+  .top-bar ul {
+    float: right;
+    height: 2em;
+    margin: 1em;
+  }
+
+  .top-bar li {
+    display: inline-block;
+    margin-right: 1em;
+    height: 2em;
+    line-height:2em;
+    cursor: pointer;
+  }
 
 
 

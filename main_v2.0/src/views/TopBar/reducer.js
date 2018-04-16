@@ -1,5 +1,5 @@
 ﻿
-import * as actionTypes from './actions.js';
+import actionTypes from './actionTypes.js';
 
 import { configData } from '../../data';
 
