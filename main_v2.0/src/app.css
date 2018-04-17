@@ -113,6 +113,10 @@ input{
 
 .contents-container {
 	height: 64em;
+	margin-left: 3em;
+	margin-right: 3em;
+	border-left: solid 1px #000;
+	border-right: solid 1px #000;
 }
 
 
