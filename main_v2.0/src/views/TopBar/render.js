@@ -15,10 +15,11 @@ class TopBar extends Component {
   render() {
 
     const languages = configData.__Languages__;
+		const { onTranslate } = this.props;
 
 		return (
 			<div className="top-bar" ref="container">
-        <Translator list={languages} onChange={onChangeTanslate}/>
+				<Translator list={languages} onChange={onTranslate}/>
         <ul>
           {
             topbarDataCN.map((item, index) => {
@@ -59,9 +60,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 
-  return {
-    onTranslate: (lang) => {
+	return {
 
+		//切换语言
+    onTranslate: (lang) => {
+			dispatch(translate(lang));
     }
   }
 }
