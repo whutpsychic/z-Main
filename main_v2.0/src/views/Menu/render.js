@@ -42,8 +42,6 @@ const getPath = (v) => {
 	return _path;
 }
 
-
-
 /************************辅助函数************************/
 
 
@@ -53,11 +51,12 @@ class Menu extends Component {
 
 	render() {
 
+
 		const { language, position } = this.props;
 		let list = getMenuData(language);
 
 		return (
-			<div className="left-menu">
+			<div className="left-menu" ref="xxx">
 				<div className="inner-container">
 					<MenuList list={list} position={position} onChange={this.onChangeMenu.bind(this)} />
 				</div>

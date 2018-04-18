@@ -1,0 +1,58 @@
+﻿
+.z-table table{
+	border-collapse:collapse;
+}
+
+.z-table th, 
+.z-table td
+{
+	text-align:center;
+}
+
+.z-table tr:first-child{
+	border-bottom:solid 2px #389edc;
+}
+
+.z-table tr.td-child {
+	cursor: pointer;
+}
+
+	.z-table tr.td-child:hover {
+		background-color: purple;
+		color: #fff;
+	}
+
+	.z-table tr.td-child.even {
+		background-color:#ccc;
+	}
+
+		.z-table tr.td-child.even:hover {
+			background-color: purple;
+			color: #fff;
+		}
+
+
+
+/************PageIn*************/
+
+.z-pageIn{
+
+}
+
+.z-pageIn li{
+	cursor:pointer;
+}
+
+	.z-pageIn li.active {
+	}
+
+
+
+
+
+
+
+
+
+
+

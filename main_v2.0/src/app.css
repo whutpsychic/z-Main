@@ -9,7 +9,6 @@
 }
 
 body{
-	overflow:hidden;
 }
 
 ul{
@@ -29,7 +28,7 @@ input{
 	height: 4em;
 	border-bottom: solid 1px #ccc;
 	background-color: #aaa;
-	position:fixed;
+	position:absolute;
 	top:0;
 }
 
@@ -61,28 +60,32 @@ input{
 /****************************************************/
 
 .left-menu {
-	overflow: auto;
-	float: left;
+	position: absolute;
+	top: 4em;
+	left: 0;
 	padding: 1em;
-	width: 14em;
-	height:33em;
+	padding-right: 0;
+	width: 200px;
+	border-right: solid 1px #000;
+	background-color:#bbb;
 }
 
 	.left-menu .inner-container {
-		padding-right: 1em;
+		/*padding-right: 1em;*/
+		height: 100%;
 	}
 
 	.left-menu .menu-level1 {
 	
 	}
 
-	.left-menu .menu-level1 label{
-		cursor:pointer;
-		font-size:1.6em;
-		
-	}
+		.left-menu .menu-level1 label {
+			display: block;
+			cursor: pointer;
+			font-size: 1.6em;
+		}
 
-		.left-menu .menu-level1 label.selected {
+		.left-menu .menu-level1.selected label {
 			color: red;
 			font-weight: 600;
 		}
@@ -105,16 +108,13 @@ input{
 
 .main-contents {
 	margin-top: 4em;
-	margin-left: 16em;
-	height: 54em;
-	border-left: solid 1px #000;
-	overflow: auto;
+	margin-left: calc(200px + 1em);
 }
 
 .contents-container {
+	margin: 0 10px;
+	min-width: 1100px;
 	height: 64em;
-	margin-left: 3em;
-	margin-right: 3em;
 	border-left: solid 1px #000;
 	border-right: solid 1px #000;
 }

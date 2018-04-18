@@ -29,15 +29,12 @@ class Item extends Component {
 		const { children, kids, value } = this.props;
 		const { active, position } = this.props;
 
-		let lb = (() => {
-			if (active)
-				return <label value={value} onClick={this.clickMenuLevel1.bind(this)} className="selected">{children}</label>
-			return <label value={value} onClick={this.clickMenuLevel1.bind(this)}>{children}</label>
-		})()
+		let _cls = "menu-level1";
+		if (active) _cls += " selected";
 
 		return (
-			<li className="menu-level1">
-				{ lb }
+			<li className={_cls}>
+				<label value={value} onClick={this.clickMenuLevel1.bind(this)}>{children}</label>
 				<ul>
 					{
 						kids.map((item, index) => {
@@ -80,7 +77,7 @@ class MenuList extends Component {
 					list.map((item, index) => {
 						if (item.value === position.split('-')[0])
 							return <Item key={index} onChange={onChange} kids={item.children} value={item.value} position={position} active>{item.text}</Item>
-						return <Item key={index} onChange={onChange} kids={item.children} value={item.value} position={position}>{item.text}</Item>
+						return <Item key={index} onChange={onChange} kids={[]} value={item.value} position={position}>{item.text}</Item>
 					})
 				}
 		  </ul>

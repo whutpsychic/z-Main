@@ -15,6 +15,7 @@ class App extends Component {
 				<TopBar />
 				<Menu />
 				<div className="main-contents">
+					
 					<Routes />
 				</div>
 			</div>

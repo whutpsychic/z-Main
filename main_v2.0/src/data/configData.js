@@ -35,6 +35,9 @@ var configData = {
 
 	currMenu: getcurrPosition('1-1'),
 
+	//设置性数据配置
+	//table一页最多会有多少条显示
+	maxnum: 3
 
 };
 
