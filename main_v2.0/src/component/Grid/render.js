@@ -6,16 +6,32 @@ import PageIn from './pageIn.js';
 import { configData } from '../../data';
 
 /*************辅助函数*************/
-const getDataWithCurrpage = (data, p) => {
+//根据当前页从所有数据中找出该加载的数据
+//data: 全部数据源
+//p: 当前第几页
+//num: 一页最多多少条
+const getDataWithCurrpage = (data, p, num) => {
 
-	if (typeof p !== 'number') { console.log('根据页码获取数据源辅助函数传入的页码不是一个数字'); return []; }
+	if (typeof p !== 'number') { console.log('根据页码获取数据源辅助函数传入的 p 或 num 不是一个数字'); return []; }
 
 	let _arr = [];
 
+	//判断当前页会不会被填满
+	data.length < p * num ? fillitUnfull() : fillitFull();
 
+	//会被填满，填满之
+	function fillitFull() {
+		for (let i = (p - 1) * num; i < num * p; i++) {
+			_arr.push(data[i]);
+		}
+	}
 
-
-
+	//不会填满，全填之
+	function fillitUnfull() {
+		for (let i = (p - 1) * num; i < data.length; i++) {
+			_arr.push(data[i]);
+		}
+	}
 
 	return _arr;
 }
@@ -55,7 +71,7 @@ class Item2 extends Component {
 		let _cls = "td-child"; if (even) _cls += " even";
 
 		return (
-			<tr className={_cls}>
+			<tr className={_cls} onClick={this.clickTr.bind(this)}>
 				{
 					option.map((item, index) => {
 
@@ -68,6 +84,11 @@ class Item2 extends Component {
 				}
 			</tr>
 		)
+	}
+
+	clickTr() {
+		const { onClick, data } = this.props;
+		onClick(data);
 	}
 }
 
@@ -83,31 +104,36 @@ class Grid extends Component{
 
 	render() {
 
-		const { option, data } = this.props;
+		const { option, data, onClickLine} = this.props;
 		let { currpage } = this.state;
 
-		let _data = getDataWithCurrpage(data, currpage);
+		let _data = getDataWithCurrpage(data, currpage, configData.maxnum);
 		let _total = data.length / configData.maxnum;
 
 		return (
-			<div className="z-table">
-				<table>
-					<tbody>
-						<Item data={option} />
-						{
-							_data.map((item, index) => {
-								return <Item2 key={index} even={index%2} data={item} option={option} />
-							})
-						}
-					</tbody>
-				</table>
-				<PageIn total={_total} maxnum={configData.maxnum} onChange={this.onChangePage.bind(this)}/>
+			<div className="z-grid">
+				<div className="grid-container">
+					<table>
+						<tbody>
+							<Item data={option} />
+							{
+								_data.map((item, index) => {
+									return <Item2 key={index} even={index % 2} data={item} option={option} onClick={onClickLine} />
+								})
+							}
+						</tbody>
+					</table>
+				</div>
+				<PageIn currpage={currpage} total={_total} maxnum={configData.maxnum} onChange={this.onChangePage.bind(this)}/>
 			</div>
 			)
 	}
 
-	onChangePage() {
-
+	onChangePage(v) {
+		v = parseInt(v, 10);
+		this.setState({
+			currpage:v
+		})
 	}
 
 

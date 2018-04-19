@@ -1,32 +1,41 @@
 ﻿
-.z-table table{
+.z-grid .grid-container {
+	min-height: 30em;
+	margin-left: 2em;
+	margin-right: 2em;
+
+	border: solid 1px #389edc;
+}
+
+.z-grid table{
 	border-collapse:collapse;
+	width:100%;
 }
 
-.z-table th, 
-.z-table td
-{
-	text-align:center;
+.z-grid th,
+.z-grid td {
+	text-align: center;
+	min-width: 5em;
 }
 
-.z-table tr:first-child{
+.z-grid tr:first-child{
 	border-bottom:solid 2px #389edc;
 }
 
-.z-table tr.td-child {
+.z-grid tr.td-child {
 	cursor: pointer;
 }
 
-	.z-table tr.td-child:hover {
+	.z-grid tr.td-child:hover {
 		background-color: purple;
 		color: #fff;
 	}
 
-	.z-table tr.td-child.even {
+	.z-grid tr.td-child.even {
 		background-color:#ccc;
 	}
 
-		.z-table tr.td-child.even:hover {
+		.z-grid tr.td-child.even:hover {
 			background-color: purple;
 			color: #fff;
 		}
@@ -35,16 +44,26 @@
 
 /************PageIn*************/
 
-.z-pageIn{
-
+.z-pageIn {
+	text-align: right;
 }
 
-.z-pageIn li{
-	cursor:pointer;
+.z-pageIn ul{
+	padding-right: 2em;
 }
 
-	.z-pageIn li.active {
+	.z-pageIn li {
+		cursor: pointer;
+		display: inline-block;
+		margin: 0.8em 0.3em;
+		padding: 0.2em 0.5em;
+		border:solid 1px #389edc;
 	}
+
+		.z-pageIn li.active {
+			color: #fff;
+			background-color:#389edc;
+		}
 
 
 

@@ -67,7 +67,7 @@ input{
 	padding-right: 0;
 	width: 200px;
 	border-right: solid 1px #000;
-	background-color:#bbb;
+	background-color: #bbb;
 }
 
 	.left-menu .inner-container {
@@ -114,7 +114,7 @@ input{
 .contents-container {
 	margin: 0 10px;
 	min-width: 1100px;
-	height: 64em;
+	/*height: 64em;*/
 	border-left: solid 1px #000;
 	border-right: solid 1px #000;
 }
