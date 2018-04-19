@@ -29,7 +29,7 @@ class Pager extends Component{
 
 		return (
 			<div className={pager_cls}>
-				<div className="pager-membrane" onClick={this.executeshowcls}></div>
+				<div className="pager-membrane" onClick={this.clickMask.bind(this)}></div>
 				<div className={type_cls}>
 					<div className="pager-title"><p>{content.title}</p></div>
 					<div className="pager-content"></div>
@@ -42,6 +42,12 @@ class Pager extends Component{
 	executeshowcls(bool) {
 		let pager_cls = "z-pager"; if (!bool) pager_cls += " hide";
 		return pager_cls;
+	}
+
+	//点击膜关闭
+	clickMask() {
+		const { closeFn } = this.props;
+		closeFn()
 	}
 
 }

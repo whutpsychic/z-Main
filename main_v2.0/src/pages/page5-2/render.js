@@ -16,16 +16,21 @@ import { changeContent, changePagertype, showPager } from './actions.js';
 
 class Page extends Component {
 
+	constructor() {
+		super(...arguments);
+
+		this.state = _store_.getState();
+	}
 
 	render() {
 
 		const _pageStyle = {};
-		const { content, showpager, pagetype } = _store_.getState();
-		console.log(showpager)
+		const { content, showpager, pagetype } = this.state;
+
 		return (
 			<div style={_pageStyle}>
 				<Grid option={gridOption} data={MovieActionsSeasonsCN} onClickLine={this.clickGridLine.bind(this)}/>
-				<Pager show={showpager} type={pagetype} content={content} />
+				<Pager show={showpager} type={pagetype} content={content} closeFn={this.closeWinFunction.bind(this)}/>
 			</div>
 			)
 
@@ -42,15 +47,25 @@ class Page extends Component {
 		//是否显示pager
 		_store_.dispatch(showPager(true));
 
-		console.log(_store_.getState())
+		this.onRefresh();
+	}
+
+	onRefresh() {
+		this.setState(_store_.getState());
+	}
+
+	closeWinFunction() {
+		//是否显示pager
+		_store_.dispatch(showPager(false));
+		this.onRefresh();
 	}
 
 	componentDidMount() {
-
+		_store_.subscribe(this.onRefresh.bind(this));
 	}
 
 	componentWillUnmount() {
-
+		_store_.unsubscribe(this.onRefresh);
 	}
 
 }
