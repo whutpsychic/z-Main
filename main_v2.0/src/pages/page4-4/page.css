@@ -1,0 +1,51 @@
+﻿
+.page4-4{
+	margin: 0 10em;
+}
+
+	.page4-4 .dictionary-container ul {
+	}
+
+	.page4-4 .dictionary-container {
+		overflow: auto;
+	}
+
+.search-input {
+	margin:5em 0;
+}
+
+	.search-input input {
+		display: block;
+		width: 40em;
+		height: 2em;
+		line-height: 2em;
+		font-size:1.2em;
+		margin: auto;
+		text-indent: 0.5em;
+	}
+
+.searcher {
+	margin-top: 8em;
+}
+
+.searcher img{
+	display:block;
+	margin:auto;
+}
+
+
+
+
+
+
+.page4-4 .dictionary-container li {
+	cursor:pointer;
+	/*margin-top:0.2em;*/
+	padding:0.2em;
+	text-indent:1em;
+}
+
+	.page4-4 .dictionary-container li:hover {
+		color: #fff;
+		background-color: purple;
+	}

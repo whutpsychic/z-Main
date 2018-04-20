@@ -1,43 +1,45 @@
 ﻿
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './page.css';
 
-import { Grid } from '../../component';
 import { Pager } from '../../component';
-
-import { gridOptionEN, gridOptionCN }from './gridOption.js';
+import Dictionary from './views/Dictionary.js';
+import Searcher from './views/Searcher.js';
 
 //data
-import { MovieActionsSeasonsCN } from '../../data';
-import { MovieActionsSeasonsEN } from '../../data';
+import { DictionaryCN } from '../../data';
 
 /******************************/
 import _store_ from './store.js';
-import { changeContent, changePagertype, showPager } from './actions.js';
+import { changeContent, changePagertype, showPager, changeWord } from './actions.js';
 
 /******************************/
 
 /******************************************/
 //根据语言选择数据源
-const getDataFromLanguage = (lang) => {
+const getDataFromLanguage = (lang, words) => {
+
+	console.log(words)
+	console.log(!words)
+
+	let source = []; let _ret = [];
 
 	switch (lang) {
 
-		case "Chinese": return MovieActionsSeasonsCN;
-		case "English": return MovieActionsSeasonsEN;
-		default: return MovieActionsSeasonsCN;
+		case "Chinese": source = DictionaryCN; break;
+		case "English": break;
+		default: source = DictionaryCN;
 	}
-}
 
-//根据语言选择Grid设置数据源
-const getGridoptionFromLanguage = (lang) => {
+	if (!words) { return source; };
 
-	switch (lang) {
-
-		case "Chinese": return gridOptionCN;
-		case "English": return gridOptionEN;
-		default: return gridOptionCN;
+	for (let i in source) {
+		if (source[i].title.indexOf(words)===-1) { continue;}
+		_ret.push(source[i])
 	}
+
+	return _ret;
 }
 
 
@@ -50,25 +52,40 @@ class Page extends Component {
 	constructor() {
 		super(...arguments);
 
+		this.getDataFromsearchV.bind(this);
+
 		this.state = this.getOwnState();
 	}
 
 	render() {
 
 		const _pageStyle = { height: '60em'};
-		const { content, showpager, pagetype } = this.state;
+		const { content, showpager, pagetype, currwords } = this.state;
 
 		const { language } = this.props;
 
-		let _maindata = getDataFromLanguage(language);
-		let _option = getGridoptionFromLanguage(language);
+		let _maindata = getDataFromLanguage(language, currwords);
+		//let _maindata = this.getDataFromsearchV();
 
 		return (
-			<div style={_pageStyle}>
-				<Grid option={_option} data={_maindata} onClickLine={this.clickGridLine.bind(this)}/>
+			<div style={_pageStyle} className="page4-4">
+				<Searcher onChange={this.getWords.bind(this)}/>
+				<Dictionary list={_maindata} onClick={this.clickWordLine.bind(this)}/>
 				<Pager show={showpager} type={pagetype} content={content} closeFn={this.closeWinFunction.bind(this)}/>
 			</div>
 			)
+	}
+
+	getDataFromsearchV() {
+
+
+
+	}
+
+	getWords(v) {
+
+		_store_.dispatch(changeWord(v))
+
 	}
 
 	//获得当前自身状态
@@ -76,13 +93,14 @@ class Page extends Component {
 		return _store_.getState();
 	}
 
-	clickGridLine(data) {
+	clickWordLine(data) {
 
+		console.log(data)
 		//更换现显示的文章内容
 		_store_.dispatch(changeContent(data));
 
 		//更换pager显示的type
-		_store_.dispatch(changePagertype("article"));
+		_store_.dispatch(changePagertype("word"));
 
 		//是否显示pager
 		_store_.dispatch(showPager(true));

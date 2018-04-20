@@ -11,8 +11,8 @@ export const changeContentReducer = (state = { content: []}, action) => {
 	}
 };
 
-//变换Pager的显示type
-export const changePagertypeReducer = (state = "article", action) => {
+//变换Pager的显示type的reducer
+export const changePagertypeReducer = (state = "word", action) => {
 
 	switch (action.type) {
 
@@ -21,7 +21,7 @@ export const changePagertypeReducer = (state = "article", action) => {
 	}
 };
 
-//显示Pager
+//显示Pager的reducer
 export const showPagerReducer = (state = false, action) => {
 
 	switch (action.type) {
@@ -30,3 +30,16 @@ export const showPagerReducer = (state = false, action) => {
 		default: return state;
 	}
 };
+
+//变换value的reducer
+export const changeWordReducer = (state = "", action) => {
+
+	switch (action.type) {
+
+		case actionTypes.CHANGE_WORD: return action.word;
+		default: return state;
+	}
+}
+
+
+

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import { TopBar } from './views';
 import { Menu } from './views';
+import { BottomBar } from './views';
 
 import Routes from './Routes.js';
 
@@ -15,9 +16,9 @@ class App extends Component {
 				<TopBar />
 				<Menu />
 				<div className="main-contents">
-					
 					<Routes />
 				</div>
+				<BottomBar />
 			</div>
 		)
 	}

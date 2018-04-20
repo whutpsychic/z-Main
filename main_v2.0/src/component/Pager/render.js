@@ -32,7 +32,13 @@ class Pager extends Component{
 				<div className="pager-membrane" onClick={this.clickMask.bind(this)}></div>
 				<div className={type_cls}>
 					<div className="pager-title"><p>{content.title}</p></div>
-					<div className="pager-content"></div>
+					<div className="pager-content">
+						{
+							content.content.map((item, index) => {
+								return (<p key={index}>{item}</p>)
+							})
+						}
+					</div>
 				</div>
 			</div>
 			)

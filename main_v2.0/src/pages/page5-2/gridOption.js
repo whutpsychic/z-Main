@@ -1,5 +1,5 @@
 ﻿
-var gridOption = [
+var gridOptionCN = [
 	{ title: "中文名", field: "nameCN" },
 	{ title: "本名", field: "name" },
 	{ title: "类型", field: "type" },
@@ -9,4 +9,14 @@ var gridOption = [
 	{ title: "个人评分", field: "score" }
 ];
 
-export default gridOption;
+var gridOptionEN = [
+	{ title: "NameCN", field: "nameCN" },
+	{ title: "NameOwn", field: "name" },
+	{ title: "Type", field: "type" },
+	{ title: "OriginCountry", field: "comefrom" },
+	{ title: "Release", field: "release" },
+	{ title: "Seen", field: "seen" },
+	{ title: "Score", field: "score" }
+];
+
+export { gridOptionCN, gridOptionEN };

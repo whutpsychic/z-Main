@@ -1,8 +1,8 @@
 
-var MovieActionsSeasonsCN = [
+var MovieActionsSeasonsEN = [
 	{
 		time: 20180120, timer: 2000, letter: 'x',
-		title: '寻梦环游记',
+		title: 'CoCo',
 		comefrom: '美国',
 		type: '迪士尼',
 		nameCN: '《寻梦环游记》',
@@ -104,4 +104,4 @@ var MovieActionsSeasonsCN = [
 ];
 
 
-export default MovieActionsSeasonsCN;
+export default MovieActionsSeasonsEN;

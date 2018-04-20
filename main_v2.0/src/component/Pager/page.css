@@ -30,38 +30,46 @@
 	}
 
 	.z-pager .pager-main.word {
-
+		min-height:unset;
+		height: auto;
+		top:calc(50% - 10em);
 	}
+
+		.z-pager .pager-main.word .pager-title {
+		  text-align:left;
+			text-indent:2em;
+		}
 
 	.z-pager .pager-main.article {
 
 	}
 
-.pager-title{
-	border-bottom:solid 3px #ccc;
-	/*background-color:purple;*/
-	height:6em;
-
-
-
-
-
+.pager-title {
+	border-bottom: solid 3px #ccc;
+	height: 4em;
+	line-height: 4em;
+	text-align: center;
+	
 }
 
 .pager-title p{
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-size:2em;
-	text-align:center;
 }
 
 .pager-main .pager-content {
 	border: dashed 2px #ccc;
 	margin: 2em;
-	height: calc(100% - 12em);
+	height: calc(100% - 10em);
+	padding:0.5em 1em;
 }
 
+.pager-main.article .pager-content p {
+	text-indent:2em;
+	font-size:1em;
+	line-height:1.8em;
 
-
+}
 
 
 
