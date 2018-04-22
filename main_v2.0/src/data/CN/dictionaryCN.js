@@ -132,6 +132,84 @@ var DictionaryCN = [
 			'【n.】拒绝;摒弃;剔除物;<医>排斥'
 		]
 	},
+		{
+		title: 'preview', property: 'n./v.',
+		usual: '预览',
+		content: [
+			'【v.】预映;预先观看;概述;扼要介绍',
+			'【n.】试映，预演;预告片;象征，预示'
+		]
+	},
+	{
+		title: 'consult', property: 'v.',
+		usual: '咨询',
+		content: [
+			'【v.】咨询;商议，商量;[医]会诊;充当顾问；请教;翻阅;求教于;顾及'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
+	{
+		title: '此条记录为模板请忽略', property: 'n./v./adj.',
+		usual: 'xxxxxxxx',
+		content: [
+			'【v.】xxxxxxxxxxxxx',
+			'【adj.】xxxxxxxxxxxxxxxxxx',
+			'【n.】xxxxxxxxxxx'
+		]
+	},
 	{
 		title: '此条记录为模板请忽略', property: 'n./v./adj.',
 		usual: 'xxxxxxxx',
