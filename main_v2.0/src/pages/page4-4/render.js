@@ -20,9 +20,6 @@ import { changeContent, changePagertype, showPager, changeWord } from './actions
 //根据语言选择数据源
 const getDataFromLanguage = (lang, words) => {
 
-	console.log(words)
-	console.log(!words)
-
 	let source = []; let _ret = [];
 
 	switch (lang) {

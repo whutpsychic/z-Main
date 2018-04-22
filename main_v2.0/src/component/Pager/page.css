@@ -58,10 +58,11 @@
 }
 
 .pager-main .pager-content {
-	border: dashed 2px #ccc;
-	margin: 2em;
-	height: calc(100% - 10em);
-	padding:0.5em 1em;
+  border: dashed 2px #ccc;
+  margin: 2em;
+  height: calc(100% - 10em);
+  padding: 0.5em 1em;
+  overflow: auto;
 }
 
 .pager-main.article .pager-content p {

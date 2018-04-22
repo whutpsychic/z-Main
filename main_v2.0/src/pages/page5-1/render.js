@@ -10,7 +10,7 @@ import { Pager } from '../../component';
 import { gridOptionEN, gridOptionCN }from './gridOption.js';
 
 //data
-import { MovieActionsSeasonsCN } from '../../data';
+import { MovieActionsClassicCN } from '../../data';
 import { MovieActionsSeasonsEN } from '../../data';
 
 /******************************/
@@ -26,9 +26,9 @@ const getDataFromLanguage = (lang) => {
 
 	switch (lang) {
 
-		case "Chinese": return MovieActionsSeasonsCN;
+		case "Chinese": return MovieActionsClassicCN;
 		case "English": return MovieActionsSeasonsEN;
-		default: return MovieActionsSeasonsCN;
+		default: return MovieActionsClassicCN;
 	}
 }
 
