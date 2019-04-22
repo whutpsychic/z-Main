@@ -1,0 +1,41 @@
+.effects-section-skeleton {
+	background: #fafafa;
+	background: linear-gradient(to bottom, #fafafa 0%, #fff 100%);
+	height: 600px;
+	position: relative;
+}
+
+.effects-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	background: #fafafa;
+	background: linear-gradient(to bottom, #fafafa 0%, #fff 100%);
+	height: 600px;
+	position: relative;
+}
+
+.effects-section p {
+	text-align: center;
+}
+
+.effects-section > p {
+	flex-basis: 100%;
+	font-size: 40px;
+	position: relative;
+}
+
+.effects-section > .introduce-part {
+	flex-basis: 24%;
+	text-align: center;
+	border: solid 1px #ccc;
+	height: 430px;
+}
+
+.effects-section > .introduce-part > img {
+	height: 50px;
+}
+
+.effects-section > .introduce-part > p {
+}

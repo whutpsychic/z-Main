@@ -1,0 +1,37 @@
+footer.main-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+	height: 60px;
+	line-height: 60px;
+	user-select: none;
+	position: relative;
+}
+
+footer.main-footer > p {
+	font-size: 18px;
+	color: rgba(255, 255, 255, 0.4);
+	background-color: #000;
+	margin: 0;
+	padding: 0 2vw;
+	z-index: 1;
+}
+
+footer.main-footer > p > span {
+	color: rgba(255, 255, 255, 0.65);
+	font-weight: bold;
+}
+
+footer.main-footer > p > span:first-child {
+	color: rgba(255, 255, 255, 1);
+}
+
+.footer-hr {
+	margin: 2vw;
+	position: absolute;
+	top: 0;
+	width: 80vw;
+	height: 1px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
