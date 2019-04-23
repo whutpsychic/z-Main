@@ -1,0 +1,87 @@
+.imitation-section {
+	background-color: #fff;
+	height: 800px;
+	position: relative;
+}
+
+/*for use antd Carousel*/
+.ant-carousel .slick-slide {
+	height: 800px;
+	text-align: center;
+	background: #fff;
+	overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+	color: #000;
+}
+
+.board-content {
+	height: 800px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.board-content p {
+	position: absolute;
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+	user-select: none;
+}
+
+.board-content > .addons {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.addons {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 30px);
+}
+
+.addons p {
+	position: absolute;
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.addons1 > p:first-child {
+	top: 60%;
+}
+
+.addons1 > p:nth-child(2) {
+	top: 78%;
+}
+
+.addons2 > p:first-child {
+	right: 8%;
+}
+
+.addons2 > p:nth-child(2) {
+	left: 8%;
+}
+
+.addons3 > p {
+	color: #666;
+}
+
+.addons3 > p:first-child {
+	right: 2%;
+}
+
+.addons3 > p:nth-child(2) {
+	right: 2%;
+}
+
+.addons3 > p:nth-child(3) {
+	bottom: -4%;
+}

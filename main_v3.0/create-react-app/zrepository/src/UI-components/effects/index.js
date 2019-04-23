@@ -35,35 +35,35 @@ export default class extends React.Component {
 			? Object.assign({}, easeCubicIn, showingStyle, { transitionDelay: ".3s" })
 			: Object.assign({}, easeCubicOut, hidingStyle);
 		const transitionDelayItem2 = show
-			? Object.assign({}, easeCubicIn, showingStyle, { transitionDelay: ".45s" })
+			? Object.assign({}, easeCubicIn, showingStyle, {
+					transitionDelay: ".45s"
+			  })
 			: Object.assign({}, easeCubicOut, hidingStyle);
 		const transitionDelayItem3 = show
 			? Object.assign({}, easeCubicIn, showingStyle, { transitionDelay: ".6s" })
 			: Object.assign({}, easeCubicOut, hidingStyle);
 
 		return (
-			<section className="effects-section-skeleton">
-				<section className="effects-section" style={animation}>
-					<p>特效大师</p>
-					<div className="introduce-part" style={transitionDelayItem1}>
-						<img alt="介绍图标" src={logo} />
-						<p>HTML5</p>
-						<p>CSS3</p>
-						<p>Canvas</p>
-					</div>
-					<div className="introduce-part" style={transitionDelayItem2}>
-						<img alt="介绍图标" src={logo} />
-						<p>丝滑 流畅</p>
-						<p>自然 高效</p>
-						<p>精致 高端</p>
-					</div>
-					<div className="introduce-part" style={transitionDelayItem3}>
-						<img alt="介绍图标" src={logo} />
-						<p>Ant-design</p>
-						<p>React-move</p>
-						<p>D3-ease</p>
-					</div>
-				</section>
+			<section className="effects-section" style={animation}>
+				<p>特效大师</p>
+				<div className="introduce-part" style={transitionDelayItem1}>
+					<img alt="介绍图标" src={logo} />
+					<p>HTML5</p>
+					<p>CSS3</p>
+					<p>Canvas</p>
+				</div>
+				<div className="introduce-part" style={transitionDelayItem2}>
+					<img alt="介绍图标" src={logo} />
+					<p>丝滑 流畅</p>
+					<p>自然 高效</p>
+					<p>精致 高端</p>
+				</div>
+				<div className="introduce-part" style={transitionDelayItem3}>
+					<img alt="介绍图标" src={logo} />
+					<p>Ant-design</p>
+					<p>React-move</p>
+					<p>D3-ease</p>
+				</div>
 			</section>
 		);
 	}
