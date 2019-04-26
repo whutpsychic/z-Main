@@ -1,0 +1,4 @@
+.right-content{
+	flex-basis: calc(100% - 280px);
+	background-color: #eee;
+}

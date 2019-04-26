@@ -9,7 +9,7 @@ export default class extends React.Component {
 				<img alt={"logo"} src={logo} />
 				<p>React</p>
 				<p>A popular UI repository for JavaScript</p>
-				<a href="https://react.docschina.org/">Official Web Page Entrance</a>
+				<a href="https://reactjs.org/">Official Web Page Entrance</a>
 			</section>
 		);
 	}

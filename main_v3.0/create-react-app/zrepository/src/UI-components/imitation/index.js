@@ -18,7 +18,11 @@ export default class extends React.Component {
 		currentAddons: 0
 	};
 
-	componentDidMount() {}
+	componentDidMount() {
+		setInterval(() => {
+			this.refs.carousel.next();
+		}, 4000);
+	}
 
 	render() {
 		const {

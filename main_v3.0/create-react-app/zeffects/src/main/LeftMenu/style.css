@@ -1,0 +1,9 @@
+.left-menu {
+	width: 280px;
+	flex-basis: 280px;
+	overflow-y: hidden;
+}
+
+.left-menu:hover {
+	overflow-y: auto;
+}
