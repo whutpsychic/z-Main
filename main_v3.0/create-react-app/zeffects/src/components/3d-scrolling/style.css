@@ -32,10 +32,6 @@
 }
 
 .scrolling-3d > .scrolling-container > div {
-/*transition-duration: 1.2s;*/
-}
-
-.scrolling-3d > .scrolling-container > .currMedia {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -43,7 +39,7 @@
 	left: 0;
 }
 
-.scrolling-3d > .scrolling-container > .nextMedia {
+.scrolling-3d > .scrolling-container > .currMediaRender {
 	position: absolute;
 	width: 100%;
 	height: 100%;

@@ -37,7 +37,7 @@ export default class extends React.Component {
 		this.refs.com.animateToBottom();
 	}
 
-	clickToRight=()=>{
-		this.refs.com.animateToRight();
-	}
+	// clickToRight=()=>{
+	// 	this.refs.com.animateToRight();
+	// }
 }

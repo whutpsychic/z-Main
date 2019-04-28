@@ -1,6 +1,12 @@
 import React from "react";
 import "./style.css";
 
+import ScrollToTop from "./ScrollToTop";
+
+//全局控制设置
+const timeout = 1200;
+
+//动效值组
 const currComStartToLeftStyle = {
 	transform: "rotateY(0deg)",
 	left: 0
@@ -64,7 +70,7 @@ const nextComEndToBottomStyle = {
 };
 
 export default class extends React.Component {
-	transition = false;
+	busy = false;
 	direction = "top";
 
 	state = {
@@ -72,7 +78,9 @@ export default class extends React.Component {
 		nextMediaKey: 1,
 		imgs: [],
 		currMediaStyle: {},
-		nextMediaStyle: {}
+		nextMediaStyle: {},
+		busy: false,
+		direction: "top"
 	};
 
 	componentDidMount() {
@@ -91,7 +99,7 @@ export default class extends React.Component {
 			nextMediaStyle
 		} = this.state;
 
-		const { direction, transition } = this;
+		const { direction, busy } = this;
 
 		let currStyle, nextStyle;
 
@@ -105,24 +113,35 @@ export default class extends React.Component {
 				nextStyle = nextComStartToBottomStyle;
 				break;
 		}
-		const _transitionStyle = transition
-			? { transition: 0 }
-			: { transition: "1.2s" };
 
-		console.log(currStyle);
-		console.log(nextStyle);
+		const _transition = busy
+			? { transition: timeout + "ms" }
+			: { transition: "0s" };
+
+		const _opacity = busy ? { opacity: 0 } : { opacity: 1 };
 
 		return (
 			<div className="scrolling-container">
-				<div
-					className="currMedia"
-					style={{ ..._transitionStyle, ...currStyle, ...currMediaStyle }}
-				>
-					{this.renderCurrMeida(currMediaKey)}
+				<div className="currMediaRender" style={_opacity}>
+					{this.renderCurrMedia(currMediaKey)}
 				</div>
 				<div
-					className="nextMedia"
-					style={{ ..._transitionStyle, ...nextStyle, ...nextMediaStyle }}
+					className="currMediaAnimator"
+					style={{
+						..._transition,
+						...currStyle,
+						...currMediaStyle,
+					}}
+				>
+					{this.renderCurrMedia(currMediaKey)}
+				</div>
+				<div
+					className="nextMediaAnimator"
+					style={{
+						..._transition,
+						...nextStyle,
+						...nextMediaStyle,
+					}}
 				>
 					{this.renderNextMedia(nextMediaKey)}
 				</div>
@@ -130,24 +149,51 @@ export default class extends React.Component {
 		);
 	}
 
-	checkNext = () => {
-		const { imgs, currMediaKey, nextMediaKey } = this.state;
-		setTimeout(() => {
-			if (nextMediaKey + 1 >= imgs.length) {
-				this.setState({
-					currMediaKey: currMediaKey + 1,
-					nextMediaKey: 0
-				});
-			} else {
-				this.setState({
-					currMediaKey: currMediaKey + 1,
-					nextMediaKey: nextMediaKey + 1
-				});
-			}
-		}, 1200);
+	reset = () => {
+		this.busy = false;
+		this.updateKeys();
+		this.setState({
+			currMediaStyle: {},
+			nextMediaStyle: {}
+		});
 	};
 
-	renderCurrMeida = currMediaKey => {
+	//组件全局事件
+	beforeTransition = () => {
+		this.transition = true;
+	};
+	afterTransition = () => {
+		setTimeout(() => {
+			this.transition = false;
+			this.updateKeys();
+		}, timeout);
+	};
+	// **************
+
+	//动画后检查media指针指向
+	updateKeys = () => {
+		const { imgs, currMediaKey, nextMediaKey } = this.state;
+		const L = imgs.length;
+		if (nextMediaKey + 1 >= L) {
+			this.setState({
+				currMediaKey: currMediaKey + 1,
+				nextMediaKey: 0
+			});
+		} else if (currMediaKey + 1 >= 0) {
+			this.setState({
+				currMediaKey: 0,
+				nextMediaKey: 1
+			});
+		} else {
+			this.setState({
+				currMediaKey: currMediaKey + 1,
+				nextMediaKey: nextMediaKey + 1
+			});
+		}
+	};
+
+	//类静态方法
+	renderCurrMedia = currMediaKey => {
 		const { imgs } = this.state;
 		const com = imgs[currMediaKey];
 		return com;
@@ -160,30 +206,53 @@ export default class extends React.Component {
 	};
 
 	animateToTop = () => {
-		this.direction = "top";
+		if (this.busy) return;
+
+		this.busy = true;
+
 		this.setState({
 			currMediaStyle: currComEndToTopStyle,
 			nextMediaStyle: nextComEndToTopStyle
 		});
-		// this.checkNext();
+
+		//动画结束之后
+		setTimeout(() => {
+			this.reset();
+		}, timeout);
 	};
 
 	animateToBottom = () => {
-		this.direction = "bottom";
+		if (this.busy) return;
+
+		this.busy = true;
+
 		this.setState({
 			currMediaStyle: currComEndToBottomStyle,
 			nextMediaStyle: nextComEndToBottomStyle
 		});
-		// this.checkNext();
+
+		//动画结束之后
+		setTimeout(() => {
+			this.reset();
+		}, timeout);
 	};
 
-	animateToRight = () => {
-		this.setState({
-			currMediaStyle: currComEndToLeftStyle,
-			nextMediaStyle: nextComEndToLeftStyle
+	// animateToBottom = () => {
+	// 	this.direction = "bottom";
+	// 	this.setState({
+	// 		currMediaStyle: currComEndToBottomStyle,
+	// 		nextMediaStyle: nextComEndToBottomStyle
+	// 	});
+	// 	// this.checkNext();
+	// };
 
-			// currMediaStyle: nextComEndToLeftStyle,
-			// nextMediaStyle: currComEndToLeftStyle
-		});
-	};
+	// animateToRight = () => {
+	// 	this.setState({
+	// 		currMediaStyle: currComEndToLeftStyle,
+	// 		nextMediaStyle: nextComEndToLeftStyle
+
+	// 		// currMediaStyle: nextComEndToLeftStyle,
+	// 		// nextMediaStyle: currComEndToLeftStyle
+	// 	});
+	// };
 }
