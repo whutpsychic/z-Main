@@ -6,24 +6,17 @@ import Context from "./context";
 import { LeftMenu } from "./main";
 import { RightContent } from "./main";
 
-class App extends React.Component {
-	state = {
-		com: "3d-scrolling",
-		updateCom: v => {
-			this.setState({
-				com: v
-			});
-		}
-	};
+import { BrowserRouter as Router } from "react-router-dom";
 
+class App extends React.Component {
 	render() {
 		return (
-			<Context.Provider value={this.state}>
+			<Router>
 				<div className="App">
 					<LeftMenu />
 					<RightContent />
 				</div>
-			</Context.Provider>
+			</Router>
 		);
 	}
 }

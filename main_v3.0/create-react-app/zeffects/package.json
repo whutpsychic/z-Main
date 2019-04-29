@@ -8,11 +8,15 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-move": "^5.2.1",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "pages": "node ./auto/pages.js",
+    "path": "node ./auto/path.js",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
@@ -20,11 +24,7 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

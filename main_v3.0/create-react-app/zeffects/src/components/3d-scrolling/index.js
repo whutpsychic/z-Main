@@ -15,10 +15,11 @@ export default class extends React.Component {
 	render() {
 		return (
 			<div className="scrolling-3d">
-				<p>hahahahhahahah</p>
+				<p>3D 滚动效果（换向有bug）</p>
 				<div className="operation-bar">
 					<Button onClick={this.clickToTop}>向上滚动</Button>
 					<Button onClick={this.clickToBottom}>向下滚动</Button>
+					<Button onClick={this.clickToLeft}>向左滚动</Button>
 					<Button onClick={this.clickToRight}>向右滚动</Button>
 				</div>
 				<Render ref="com">
@@ -33,11 +34,15 @@ export default class extends React.Component {
 		this.refs.com.animateToTop();
 	};
 
-	clickToBottom=()=>{
+	clickToBottom = () => {
 		this.refs.com.animateToBottom();
-	}
+	};
 
-	// clickToRight=()=>{
-	// 	this.refs.com.animateToRight();
-	// }
+	clickToLeft = () => {
+		this.refs.com.animateToLeft();
+	};
+
+	clickToRight = () => {
+		this.refs.com.animateToRight();
+	};
 }

@@ -7,25 +7,6 @@ import ScrollToTop from "./ScrollToTop";
 const timeout = 1200;
 
 //动效值组
-const currComStartToLeftStyle = {
-	transform: "rotateY(0deg)",
-	left: 0
-};
-
-const currComEndToLeftStyle = {
-	transform: "rotateY(90deg)",
-	left: "50%"
-};
-
-const nextComStartToLeftStyle = {
-	transform: "rotateY(-90deg)",
-	left: "50%"
-};
-
-const nextComEndToLeftStyle = {
-	transform: "rotateY(0deg)",
-	left: 0
-};
 
 //toTop
 const currComStartToTopStyle = {
@@ -56,17 +37,59 @@ const currComStartToBottomStyle = {
 
 const currComEndToBottomStyle = {
 	transform: "rotateX(-90deg)",
-	bottom: "-50%"
+	top: "50%"
 };
 
 const nextComStartToBottomStyle = {
 	transform: "rotateX(90deg)",
-	bottom: "100%"
+	top: "-50%"
 };
 
 const nextComEndToBottomStyle = {
 	transform: "rotateX(0deg)",
-	bottom: 0
+	top: 0
+};
+
+//toLeft
+const currComStartToLeftStyle = {
+	transform: "rotateY(0deg)",
+	left: 0
+};
+
+const currComEndToLeftStyle = {
+	transform: "rotateY(90deg)",
+	left: "-50%"
+};
+
+const nextComStartToLeftStyle = {
+	transform: "rotateY(-90deg)",
+	left: "50%"
+};
+
+const nextComEndToLeftStyle = {
+	transform: "rotateY(0deg)",
+	left: 0
+};
+
+//toRight
+const currComStartToRightStyle = {
+	transform: "rotateY(0deg)",
+	left: 0
+};
+
+const currComEndToRightStyle = {
+	transform: "rotateY(90deg)",
+	left: "50%"
+};
+
+const nextComStartToRightStyle = {
+	transform: "rotateY(-90deg)",
+	left: "-50%"
+};
+
+const nextComEndToRightStyle = {
+	transform: "rotateY(0deg)",
+	left: 0
 };
 
 export default class extends React.Component {
@@ -78,9 +101,7 @@ export default class extends React.Component {
 		nextMediaKey: 1,
 		imgs: [],
 		currMediaStyle: {},
-		nextMediaStyle: {},
-		busy: false,
-		direction: "top"
+		nextMediaStyle: {}
 	};
 
 	componentDidMount() {
@@ -112,6 +133,14 @@ export default class extends React.Component {
 				currStyle = currComStartToBottomStyle;
 				nextStyle = nextComStartToBottomStyle;
 				break;
+			case "left":
+				currStyle = currComStartToLeftStyle;
+				nextStyle = nextComStartToLeftStyle;
+				break;
+			case "right":
+				currStyle = currComStartToRightStyle;
+				nextStyle = nextComStartToRightStyle;
+				break;
 		}
 
 		const _transition = busy
@@ -130,7 +159,7 @@ export default class extends React.Component {
 					style={{
 						..._transition,
 						...currStyle,
-						...currMediaStyle,
+						...currMediaStyle
 					}}
 				>
 					{this.renderCurrMedia(currMediaKey)}
@@ -140,7 +169,7 @@ export default class extends React.Component {
 					style={{
 						..._transition,
 						...nextStyle,
-						...nextMediaStyle,
+						...nextMediaStyle
 					}}
 				>
 					{this.renderNextMedia(nextMediaKey)}
@@ -209,6 +238,7 @@ export default class extends React.Component {
 		if (this.busy) return;
 
 		this.busy = true;
+		this.direction = "top";
 
 		this.setState({
 			currMediaStyle: currComEndToTopStyle,
@@ -225,6 +255,7 @@ export default class extends React.Component {
 		if (this.busy) return;
 
 		this.busy = true;
+		this.direction = "bottom";
 
 		this.setState({
 			currMediaStyle: currComEndToBottomStyle,
@@ -237,22 +268,37 @@ export default class extends React.Component {
 		}, timeout);
 	};
 
-	// animateToBottom = () => {
-	// 	this.direction = "bottom";
-	// 	this.setState({
-	// 		currMediaStyle: currComEndToBottomStyle,
-	// 		nextMediaStyle: nextComEndToBottomStyle
-	// 	});
-	// 	// this.checkNext();
-	// };
+	animateToLeft = () => {
+		if (this.busy) return;
 
-	// animateToRight = () => {
-	// 	this.setState({
-	// 		currMediaStyle: currComEndToLeftStyle,
-	// 		nextMediaStyle: nextComEndToLeftStyle
+		this.busy = true;
+		this.direction = "left";
 
-	// 		// currMediaStyle: nextComEndToLeftStyle,
-	// 		// nextMediaStyle: currComEndToLeftStyle
-	// 	});
-	// };
+		this.setState({
+			currMediaStyle: currComEndToLeftStyle,
+			nextMediaStyle: nextComEndToLeftStyle
+		});
+
+		//动画结束之后
+		setTimeout(() => {
+			this.reset();
+		}, timeout);
+	};
+
+	animateToRight = () => {
+		if (this.busy) return;
+
+		this.busy = true;
+		this.direction = "right";
+
+		this.setState({
+			currMediaStyle: currComEndToRightStyle,
+			nextMediaStyle: nextComEndToRightStyle
+		});
+
+		//动画结束之后
+		setTimeout(() => {
+			this.reset();
+		}, timeout);
+	};
 }
