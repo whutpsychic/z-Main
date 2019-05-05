@@ -1,8 +1,6 @@
 import React from "react";
 import "./App.css";
 
-import Context from "./context";
-
 import { LeftMenu } from "./main";
 import { RightContent } from "./main";
 

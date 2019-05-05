@@ -5,7 +5,7 @@ import { Button } from "antd";
 
 import pic1 from "./pic1.jpg";
 import pic2 from "./pic2.jpg";
-// import pic3 from "./pic3.jpg";
+import pic3 from "./pic3.jpg";
 
 export default class extends React.Component {
 	state = {};
@@ -23,8 +23,9 @@ export default class extends React.Component {
 					<Button onClick={this.clickToRight}>向右滚动</Button>
 				</div>
 				<Render ref="com">
-					<img alt={"jksdafkl"} src={pic1} />
-					<img alt={"jksdafkl"} src={pic2} />
+					<img alt={"图片1"} src={pic1} />
+					<img alt={"图片2"} src={pic2} />
+					<img alt={"图片3"} src={pic3} />
 				</Render>
 			</div>
 		);

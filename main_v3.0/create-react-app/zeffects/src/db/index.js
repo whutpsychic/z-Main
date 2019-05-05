@@ -13,7 +13,18 @@ const m_borderHightLight = {
 
 const DB = {
 	LeftMenu: [
-		{ key: 1, text: "3d系列", children: [m_3DScrolling, m_borderHightLight] }
+		{
+			key: 1,
+			text: "3d系列",
+			tag: "3d",
+			children: [m_3DScrolling]
+		},
+		{
+			key: 2,
+			text: "border",
+			tag: "border",
+			children: [m_borderHightLight]
+		}
 	]
 };
 

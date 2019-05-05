@@ -1,8 +1,6 @@
 import React from "react";
 import "./style.css";
 
-import ScrollToTop from "./ScrollToTop";
-
 //全局控制设置
 const timeout = 1200;
 
@@ -113,7 +111,6 @@ export default class extends React.Component {
 
 	render() {
 		const {
-			imgs,
 			currMediaKey,
 			nextMediaKey,
 			currMediaStyle,
@@ -140,6 +137,8 @@ export default class extends React.Component {
 			case "right":
 				currStyle = currComStartToRightStyle;
 				nextStyle = nextComStartToRightStyle;
+				break;
+			default:
 				break;
 		}
 
@@ -208,7 +207,7 @@ export default class extends React.Component {
 				currMediaKey: currMediaKey + 1,
 				nextMediaKey: 0
 			});
-		} else if (currMediaKey + 1 >= 0) {
+		} else if (currMediaKey + 1 >= L) {
 			this.setState({
 				currMediaKey: 0,
 				nextMediaKey: 1
