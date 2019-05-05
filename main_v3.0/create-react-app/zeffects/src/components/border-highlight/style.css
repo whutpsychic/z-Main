@@ -1,0 +1,121 @@
+.border-highlight {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	height: 800px;
+}
+.border-highlight > p {
+	font-size: 30px;
+	font-weight: bold;
+	flex-basis: 100%;
+	text-align: center;
+}
+
+.border-highlight > div {
+	margin: 0 20px;
+}
+
+button{
+	background-color: #fff;
+	padding: 4px 12px;
+	border: solid 1px #ccc;
+}
+
+/*****************/
+/*for bhl*/
+.border-highlight-container {
+	position: relative;
+	padding: 3px;
+	overflow: hidden;
+}
+
+.virtual-border {
+	position: absolute;
+	background-color: #389edc;
+	transition: 0.4s;
+}
+
+.bhl-border-top {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 3px;
+}
+
+.bhl-border-bottom {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 3px;
+}
+
+.bhl-border-left {
+	left: 0;
+	bottom: -100%;
+	width: 3px;
+	height: 100%;
+}
+
+.bhl-border-right {
+	right: 0;
+	top: -100%;
+	width: 3px;
+	height: 100%;
+}
+
+.border-highlight-container:hover .bhl-border-top,
+.border-highlight-container:hover .bhl2-border-top {
+	left: 0;
+}
+
+.border-highlight-container:hover .bhl-border-bottom,
+.border-highlight-container:hover .bhl2-border-bottom {
+	right: 0;
+}
+
+.border-highlight-container:hover .bhl-border-left,
+.border-highlight-container:hover .bhl2-border-left {
+	bottom: 0;
+}
+
+.border-highlight-container:hover .bhl-border-right,
+.border-highlight-container:hover .bhl2-border-right {
+	top: 0;
+}
+
+/*for bhl2*/
+.bhl2 {
+	transition: 0.1s;
+}
+
+.bhl2-border-top {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 3px;
+}
+
+.bhl2-border-bottom {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 3px;
+	transition-delay: 0.2s;
+}
+
+.bhl2-border-left {
+	left: 0;
+	bottom: -100%;
+	width: 3px;
+	height: 100%;
+	transition-delay: 0.3s;
+}
+
+.bhl2-border-right {
+	right: 0;
+	top: -100%;
+	width: 3px;
+	height: 100%;
+	transition-delay: 0.1s;
+}
