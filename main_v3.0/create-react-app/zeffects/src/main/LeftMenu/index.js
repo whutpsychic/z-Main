@@ -12,8 +12,8 @@ const { SubMenu, Item } = Menu;
 
 export default class extends React.Component {
 	state = {
-		currMenuLevel1: [null],
-		currMenuLevel2: [null]
+		currMenuLevel1: ["1"],
+		currMenuLevel2: ["1-1"]
 	};
 
 	componentDidMount() {

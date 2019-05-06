@@ -1,5 +1,5 @@
 //浅比较
-//一个数组中是否有某项目
+一个数组中是否有某项目
 Array.prototype.has = function(item) {
 
 	const arr = this;
