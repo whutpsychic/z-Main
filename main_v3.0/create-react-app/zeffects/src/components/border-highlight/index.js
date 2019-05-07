@@ -4,6 +4,7 @@ import { Button } from "antd";
 
 import Bhl from "./render";
 import Bhl2 from "./render2";
+import Bhl3 from "./render3";
 
 export default class extends React.Component {
 	render() {
@@ -16,6 +17,9 @@ export default class extends React.Component {
 				<Bhl2>
 					<button onClick={this.clickBtn}>Hover me!</button>
 				</Bhl2>
+				<Bhl3>
+					<button onClick={this.clickBtn}>Hover me!</button>
+				</Bhl3>
 			</div>
 		);
 	}

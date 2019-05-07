@@ -33,7 +33,7 @@ button{
 .virtual-border {
 	position: absolute;
 	background-color: #389edc;
-	transition: 0.4s;
+	transition-duration: 0.4s;
 }
 
 .bhl-border-top {
@@ -65,22 +65,26 @@ button{
 }
 
 .border-highlight-container:hover .bhl-border-top,
-.border-highlight-container:hover .bhl2-border-top {
+.border-highlight-container:hover .bhl2-border-top,
+.border-highlight-container:hover .bhl3-border-top {
 	left: 0;
 }
 
 .border-highlight-container:hover .bhl-border-bottom,
-.border-highlight-container:hover .bhl2-border-bottom {
+.border-highlight-container:hover .bhl2-border-bottom,
+.border-highlight-container:hover .bhl3-border-bottom {
 	right: 0;
 }
 
 .border-highlight-container:hover .bhl-border-left,
-.border-highlight-container:hover .bhl2-border-left {
+.border-highlight-container:hover .bhl2-border-left,
+.border-highlight-container:hover .bhl3-border-left {
 	bottom: 0;
 }
 
 .border-highlight-container:hover .bhl-border-right,
-.border-highlight-container:hover .bhl2-border-right {
+.border-highlight-container:hover .bhl2-border-right,
+.border-highlight-container:hover .bhl3-border-right {
 	top: 0;
 }
 
@@ -118,4 +122,40 @@ button{
 	width: 3px;
 	height: 100%;
 	transition-delay: 0.1s;
+}
+
+/*for bhl3*/
+.bhl3 {
+	/*transition: 0.1s;*/
+}
+
+.bhl3-border-top {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 3px;
+}
+
+.bhl3-border-bottom {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 3px;
+	/*transition-delay: 0.2s;*/
+}
+
+.bhl3-border-left {
+	left: 0;
+	bottom: -100%;
+	width: 3px;
+	height: 100%;
+	/*transition-delay: 0.3s;*/
+}
+
+.bhl3-border-right {
+	right: 0;
+	top: -100%;
+	width: 3px;
+	height: 100%;
+	/*transition-delay: 0.1s;*/
 }

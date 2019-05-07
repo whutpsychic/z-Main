@@ -27,11 +27,11 @@ export default class extends React.Component {
 
 	onHover = e => {
 		e.preventDefault();
-		console.log("onHover");
+		// console.log("onHover");
 	};
 
 	offHover = e => {
 		e.preventDefault();
-		console.log("offHover");
+		// console.log("offHover");
 	};
 }
