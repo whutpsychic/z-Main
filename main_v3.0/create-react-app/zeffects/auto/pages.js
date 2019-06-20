@@ -1,5 +1,71 @@
+// ***************
+// *运行 npm run pages 以写入pages.js
+// *
+// ***************
+
 const fs = require("fs");
 
+//***************************
+// 根据 db 来确定如果存在则跳过，如果不存在则初始化一个空的文件夹（内含最简单文件）
+
+const getindexjstemplate = str =>
+	`import React from "react";
+import "./style.css";
+
+export default class extends React.Component {
+	render() {
+		return <h1>` +
+	str +
+	`</h1>;
+	}
+}`;
+
+// 读取components文件夹内的所有文件夹
+
+//从 db 读取数据并处理
+const fromdb = fs.readFile("./src/db/index.js", [], (how, data) => {
+	//转字符串
+	const dataStr = data.toString("utf-8");
+	//提取link:"xxxx"
+	const linkarr = dataStr.match(/link:\s*"\w*-\w*"/g);
+	//提取link 后面的字符串
+	const _arr = linkarr.map(item => {
+		item = item.replace(/link:\s*/, "");
+		item = item.replace(/"/g, "");
+		return item;
+	});
+
+	//从components文件夹读取
+	const components = fs.readdirSync("./src/components", []);
+
+	_arr.forEach(item => {
+		let found = false;
+		for (let i of components) {
+			if (i === item) {
+				found = true;
+				break;
+			}
+		}
+
+		if (found) return;
+
+		console.log("正在创建组件目录： " + item + "......");
+		//创建动作
+		const _path = "./src/components/" + item;
+		fs.mkdir(_path, [], () => {
+			fs.writeFile(
+				_path + "/index.js",
+				getindexjstemplate(item),
+				["utf8"],
+				() => {}
+			);
+			fs.writeFile(_path + "/style.css", "", ["utf8"], () => {});
+			console.log("已成功创建" + item);
+		});
+	});
+});
+
+// *************************
 //配置组
 const fileUrl = "./src/pages.js";
 const componentsDir = "./src/components";

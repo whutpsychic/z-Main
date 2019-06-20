@@ -5,6 +5,12 @@ const m_3DScrolling = {
 	link: "3d-scrolling"
 };
 
+const m_3DRotaryDisplay = {
+	key: "1-2",
+	text: "3d 旋转展示",
+	link: "3d-rotarydisplay"
+};
+
 const m_borderHightLight = {
 	key: "2-1",
 	text: "border 描边",
@@ -17,7 +23,7 @@ const DB = {
 			key: 1,
 			text: "3d系列",
 			tag: "3d",
-			children: [m_3DScrolling]
+			children: [m_3DScrolling, m_3DRotaryDisplay]
 		},
 		{
 			key: 2,

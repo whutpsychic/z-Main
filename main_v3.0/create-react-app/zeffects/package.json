@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.16.5",
+    "core-js": "^3.1.4",
     "d3-ease": "^1.0.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -24,7 +25,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
