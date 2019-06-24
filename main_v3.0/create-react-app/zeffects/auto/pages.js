@@ -8,17 +8,39 @@ const fs = require("fs");
 //***************************
 // 根据 db 来确定如果存在则跳过，如果不存在则初始化一个空的文件夹（内含最简单文件）
 
+//工具函数
+const excutecssnumstartor = str => {
+	let _w = str[0];
+	let _str = str;
+	switch (_w) {
+		case "3":
+			_str[0] = "s";
+			return _str;
+		default:
+			return str;
+	}
+};
+
 const getindexjstemplate = str =>
 	`import React from "react";
 import "./style.css";
 
 export default class extends React.Component {
 	render() {
+
+		const cls = "` +
+	excutecssnumstartor(str) +
+	`"
+
 		return <h1>` +
 	str +
 	`</h1>;
 	}
 }`;
+
+const getstylecsstemplate = str => {
+	`.` + excutecssnumstartor(str) + `{}`;
+};
 
 // 读取components文件夹内的所有文件夹
 
@@ -59,7 +81,12 @@ const fromdb = fs.readFile("./src/db/index.js", [], (how, data) => {
 				["utf8"],
 				() => {}
 			);
-			fs.writeFile(_path + "/style.css", "", ["utf8"], () => {});
+			fs.writeFile(
+				_path + "/style.css",
+				getstylecsstemplate(item),
+				["utf8"],
+				() => {}
+			);
 			console.log("已成功创建" + item);
 		});
 	});

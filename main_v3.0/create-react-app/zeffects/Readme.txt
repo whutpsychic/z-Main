@@ -1,7 +1,7 @@
 
 新增视觉组件:
 1.修改db.js(新增菜单及相关参数)
-2. npm run pages
+2. npm run pages（此命令之后，components文件夹内即已新增了新的组件文件夹）
 
 
 

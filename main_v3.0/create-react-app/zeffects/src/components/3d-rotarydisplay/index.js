@@ -2,7 +2,20 @@ import React from "react";
 import "./style.css";
 
 export default class extends React.Component {
+	componentDidMount() {}
+
 	render() {
-		return <h1>3d-rotarydisplay</h1>;
+		return (
+			<section className="sd-rotarydisplay">
+				<div className="juxing juxing-container">
+					<div className="juxing surface" />
+					{<div className="juxing surface" />}
+					{<div className="juxing surface" />}
+					{/*<div className="juxing surface" />*/}
+					{/*<div className="juxing surface" />*/}
+					{/*<div className="juxing surface" />*/}
+				</div>
+			</section>
+		);
 	}
 }
